@@ -15,7 +15,7 @@
 }
 
 body {
-	background: #88B5C2;
+	background: #028482;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight:300;
 	text-align: left;
@@ -47,32 +47,9 @@ body {
 	border-radius: 5px;
 	padding: 5px;
 }
-.gradient {
-	/* Center Positioning */
-	width: 600px;
-	height: 600px;
-	position: fixed;
-	left: 50%;
-	top: 50%;
-	margin-left: -300px;
-	margin-top: -300px;
-	z-index: -2;
-	
-	/* Fallback */ 
 
-	background-repeat: no-repeat; 
-	
-	/* CSS3 Gradient */
-	background-image: -webkit-gradient(radial, 0% 0%, 0% 100%, from(rgba(213,246,255,1)), to(rgba(213,246,255,0)));
-	background-image: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(213,246,255,1), rgba(213,246,255,0));
-	background-image: -moz-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
-	background-image: -ms-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
-	background-image: -o-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
-}
 
-/*******************
-LOGIN FORM
-*******************/
+/*LOGIN FORM*/
 
 .loginform {
 	width: 300px;
@@ -95,7 +72,7 @@ LOGIN FORM
 }
 
 .loginform .header h1 {
-	font-family: 'comic sans MS', serif;
+	font-family: 'consolas', serif;
 	font-weight: 300;
 	font-size: 24px;
 	line-height:34px;
@@ -105,6 +82,7 @@ LOGIN FORM
 }
 
 .loginform .header span {
+	font-family: 'consolas';
 	font-size: 11px;
 	line-height: 16px;
 	color: #678889;
@@ -172,7 +150,7 @@ LOGIN FORM
 }
 
 .user-icon {
-	top:169px; /* Positioning fix for slide-in */
+	top:169px; /* Positioning fix for slide-in animation */
 	background: rgba(65,72,72,0.75) url(../resources/user-icon.png) no-repeat center;	
 }
 
@@ -213,7 +191,7 @@ LOGIN FORM
 	float:right;
 	padding: 11px 25px;
 	
-	font-family: 'Bree Serif', serif;
+	font-family: 'AR CENA', serif;
 	font-size: 18px;
 	color: #fff;
 	text-shadow: 0px 1px 0 rgba(0,0,0,0.25);

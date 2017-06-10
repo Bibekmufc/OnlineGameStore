@@ -6,12 +6,11 @@ include '../dbh.php';
     $password = $_POST['password'];
 
  /*retrieves data from user table*/ 
-$sqll = "SELECT id, username, location from user WHERE username = '$username' AND password = '$password'";
+$sql = "SELECT id, username from user WHERE username = '$username' AND password = '$password'";
 
 
-                                                                                                            and mathces if it matches with the data 
-                                                                                                            inserted by the user*/
-$result = $conn->query($sqll);
+                                                                                                        
+$result = $conn->query($sql);
 if ($result->num_rows >= 1) {
         while ($row = $result->fetch_assoc()) {
             $username = $row['username'];
@@ -19,13 +18,12 @@ if ($result->num_rows >= 1) {
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $id;
             $_SESSION['uid'] = $row['id'];
-            $_SESSION['location'] = $row['location'];
         }
-        header("location:dashboard.php");
+        header("location:home.php");
     } else { ?>
         <script>
             alert("Username or Password incorrect. Please try again!"); //displays message to notify that it doesnt match
-            window.location.href = '../index.php';
+            window.location.href = '../loginpage.php';
         </script>
         <?php
 }
