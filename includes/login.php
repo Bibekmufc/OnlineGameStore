@@ -1,25 +1,19 @@
-<?php
-	session_start();       //start of the session
+<?php 
 include '../dbh.php';
-	if (isset($_POST['username']) && isset($_POST['password'])) {
-	$username = $_POST['username'];
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
- /*retrieves data from user table*/ 
-$sql = "SELECT id, username from user WHERE username = '$username' AND password = '$password'";
-
-
-                                                                                                        
+$sql = "SELECT * from users WHERE username = '$username' AND password = '$password'"; /*retrieves data from user table 
+                                                                                                            and mathces if it matches with the data 
+                                                                                                            inserted by the user*/
 $result = $conn->query($sql);
 if ($result->num_rows >= 1) {
         while ($row = $result->fetch_assoc()) {
             $username = $row['username'];
-            $id = $row['id'];
-            $_SESSION['username'] = $username;
-            $_SESSION['id'] = $id;
-            $_SESSION['uid'] = $row['id'];
+            $password = $row['password'];
         }
-        header("location:home.php");
+        header("location: ../home.php");
     } else { ?>
         <script>
             alert("Username or Password incorrect. Please try again!"); //displays message to notify that it doesnt match

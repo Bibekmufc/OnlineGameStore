@@ -9,7 +9,7 @@ include 'dbh.php';
       <link rel="stylesheet" href="css/loginstyle.css">
 </head>
 <body>
-  <form name="loginform" class="loginform" action="" method="post">
+  <form name="loginform" class="loginform" action="includes/login.php" method="post">
 	
 		<div class="header">
 		<h1>Welcome To Online Gaming Store</h1>
@@ -24,7 +24,7 @@ include 'dbh.php';
 		</div>
 
 		<div class="footer">
-		<a href="#" class="button">Login</a>
+		<button type = "submit" class = "button" name = "login">Login</button>
 		</div>
 
 	</form> 
