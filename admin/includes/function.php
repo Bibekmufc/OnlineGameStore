@@ -56,7 +56,7 @@
 
 
 
-    $query = "insert into products (pro_name, cat_id, img1, img2, img3, img4, description, price, brand, stock,keyword, added_date) values ($pro_name', '$cat_id','$img1','$img2','$img3','$img4', '$description', '$price', '$brand', '$stock','$keyword', NOW())";
+    $query = "insert into products (pro_name, cat_id, img1, img2, img3, img4, description, price, brand, stock, keyword, added_date) values ($pro_name', '$cat_id','$img1','$img2','$img3','$img4', '$description', '$price', '$brand', '$stock','$keyword', NOW())";
     $result = $con->query($query);
     if($result == true){
        echo "<script>alert('Product has been added successfully!'); </script>";
