@@ -27,11 +27,36 @@
 #nav ul li:hover{background: #8877c6; border-top: 3px solid #000}
 
 /*body contents*/
-#bodyleft{height: 500px; border-radius: 3px; width: 72%; background: #fff; margin: 1%; float: left}
-#bodyleft h2{border-top-left-radius: 3px; border-top-right-radius: 3px; line-height: 40px; background: #c41b37; height: 40px; text-align: center; color: #fff;}
+#bodyleft{padding: 1px; box-sizing: border-box; border-radius: 3px; width: 72%; background: #fff; margin: 1%; float: left}
+#bodyleft h2{ border-top-left-radius: 3px; border-top-right-radius: 3px; line-height: 40px; background: #c41b37; height: 40px; text-align: center; color: #fff;}
+#bodyleft ul{list-style-type: none; padding-bottom: 1.5%}
+#bodyleft ul li{margin-left: 1%; margin-top: 10px; border-radius: 3px; float: left; width: 31%; height: 350px; border: 3px solid #e6e6e6}
+#bodyleft h3 {box-shadow: 4.5px 4.5px 4.5px 4.5px #ccc; line-height: 40px; height:40px; border-radius: 3px; background: #c41b37; color: #fff; padding-left: 5%}
+#bodyleft ul li a{margin-top: 7px; text-decoration: none; color: #2e2e2e; display: block;}
+#bodyleft ul li a h4{overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; font-size: 12px;}
+#bodyleft ul li a img{width: 100%; height: 280px; margin-bottom: 10px;}
+#pro_btn{width: 30%; height: 30px; background: #fff; border-radius: 3px; border:1px solid #c41b37;}
+#pro_btn:hover{background: #400400}
+#pro_btn:hover a{color: #fff;}
+
+#pro_img{width:40%; padding: 1%; box-sizing: border-box; background: #fff; float: left;}
+#pro_img img{width: 100%; height: 450px;}
+#pro_img ul{list-style-type: none}
+#pro_img ul li{float: left;}
+#pro_img ul li img{width: 80px; height: 80px; margin-left: 10px}
+#pro_desc{padding: 1%; box-sizing: border-box; width:60%; height: 550px; background: #fff; float: left;}
+#pro_desc h3{margin-top: 20px; text-align: center; height: 35px; border-bottom: 1px solid #e6e6e6}
+#pro_desc ul{margin-top: 15px; width: 50%; float: left;}
+#pro_desc ul li{margin-left: 10px; height: 25px;}
+#pro_desc h4{margin-top: 40px; margin-bottom: 20px;}
+#pro_desc center form button{border-radius: 3px; width: 180px; height: 35px; background: #fff; border: 1px solid: #400040;}
+#pro_desc center form button:hover{background: #400040; color: #fff;}
+
+#similar{padding-top: 20px; background: #fff; width: 100%; height: 350px;}
+#similar h3{background: #400040; color: #fff; height: 40px; line-height: 40px; padding-left: 2%; }
 
 #slider{width: 100%; height: 350px;}
-#slider img{width: 100%; height: 350px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px }
+#slider img{width: 100%; height: 300px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px }
 
 #bodyright{height: 500px; border-radius: 3px; width: 25%; background: #fff; margin: 1% 1% 1% 0%; float: left}
 #bodyright h3{border-top-left-radius: 3px; border-top-right-radius: 3px; line-height: 40px; background: #c41b37; height: 40px; text-align: center; color: #fff;}

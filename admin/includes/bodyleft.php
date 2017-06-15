@@ -3,7 +3,9 @@
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="index.php?view_cat">View Categories</a></li>
+			<li><a href="index.php?add_prod">Add Products</a></li>
 			<li><a href="index.php?view_prod">View Products</a></li>
+
 		</ul>	
 
 	</div>
@@ -14,6 +16,9 @@
 			include ("cat.php");
 		}
 		if(isset($_GET['view_prod'])){
-			include ("products.php");
+			include ("view_prod.php");
+		}
+		if(isset($_GET['add_prod'])){
+			include ("add_prod.php");
 		}
 	 ?>
