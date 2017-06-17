@@ -8,10 +8,9 @@
 		include ("includes/function.php");
 		include ("includes/header.php");
 		include ("includes/nav.php");
-		include ("includes/bodyleft.php");
+		echo "<div id='bodyleft'><ul>"; categoryDetails(); echo"</ul></div>";
 		include ("includes/bodyright.php");
 		include ("includes/footer.php");
-		echo cart();
 	 ?>	
 	</body>
 </html>

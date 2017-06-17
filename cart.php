@@ -8,10 +8,14 @@
 		include ("includes/function.php");
 		include ("includes/header.php");
 		include ("includes/nav.php");
-		include ("includes/bodyleft.php");
-		include ("includes/bodyright.php");
-		include ("includes/footer.php");
-		echo cart();
 	 ?>	
+	 <div class="cart">
+	 	<form method="POST" enctype="multipart/form-data">
+	 		
+	 				<?php echo cartDisplay(); ?>
+	 		</table>
+	 	</form>
+	 </div>
+	 <?php include ("includes/footer.php");  ?>
 	</body>
 </html>

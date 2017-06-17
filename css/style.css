@@ -14,17 +14,24 @@
 #links ul li{float: right; margin-left: 30px; line-height: 30px}
 #links ul li a{text-decoration: none; font-size: 17px; color: #fff;}
 
-/*buttons*/
+/*header buttons*/
 #search form input{width: 58%; height: 35px; padding-left: 2%; outline: none; border-width: 0px; border-top-left-radius: 3px; border-bottom-left-radius: 3px;}
 #search_btn{width: 10%; height: 35px; background: #400040; color: #fff; font-weight: bold; border-width: 0px; border-top-right-radius: 3px; border-bottom-right-radius: 3px;}
 #cart_btn{width: 10%; height: 35px; background: #400040; color: #fff; font-weight: bold; border-width: 0px; border-radius: 3px; }
+#cart_btn a{text-decoration: none; color: #fff; display: block;}
 
-/*navbar*/
+
+/*navigation bar*/
 #nav{overflow: hidden; width: 100%; height: 40px; background: #20144c; line-height: 5px}
-#nav ul{list-style-type: none}
+#nav ul{list-style-type: none; padding-left: 2%;}
 #nav ul li{padding: 1%; float: left;}
-#nav ul li a{text-decoration: none; color: #fff; font-size: 18px; font-weight: bold}
+#nav ul li a{text-decoration: none; color: #fff; font-size: 14px;}
 #nav ul li:hover{background: #8877c6; border-top: 3px solid #000}
+
+#nav li ul{display:none !important;}
+#nav li:hover ul{box-shadow: 5px 5px 5px 5px #2e2e2e; padding-left: 0%; margin-left: -20px;background:#20144c;margin-top: 16px; display:block !important; width: 200px; z-index: 999; position: absolute;}
+#nav li ul li{padding-left: 5%; float: none; height: 35px; line-height: 35px;}
+#nav li ul li a{display: block;}
 
 /*body contents*/
 #bodyleft{padding: 1px; box-sizing: border-box; border-radius: 3px; width: 72%; background: #fff; margin: 1%; float: left}
@@ -52,8 +59,14 @@
 #pro_desc center form button{border-radius: 3px; width: 180px; height: 35px; background: #fff; border: 1px solid: #400040;}
 #pro_desc center form button:hover{background: #400040; color: #fff;}
 
-#similar{padding-top: 20px; background: #fff; width: 100%; height: 350px;}
+#similar{padding-bottom: 10px; padding-top: 20px; background: #fff; width: 100%; height: 350px;}
 #similar h3{background: #400040; color: #fff; height: 40px; line-height: 40px; padding-left: 2%; }
+#similar ul{margin-top: 10px; list-style-type: none;}
+#similar ul li{ padding: 0.5%; border: 1px solid #fff; width: 180px; float: left; margin-left: 20px;}
+#similar ul li:hover{border: 1px solid #400040; border-radius: 3px;}
+#similar ul li a{text-decoration: none; color: #000;}
+#similar ul li a img{width: 180px; height: 230px;}
+#similar ul li a p{text-align: center;}
 
 #slider{width: 100%; height: 350px;}
 #slider img{width: 100%; height: 300px; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px }
@@ -64,3 +77,17 @@
 /*footer*/
 #footer{width: 100%; height: 35px; background: #c41b37}
 #footer h4{text-align: center; color: #fff; line-height: 35px; }
+
+/*cart*/
+.cart{width: 100%; min-height: 700px; padding: 1%; box-sizing: border-box; background: #fff}
+.cart form table{width: 100%}
+.cart form table tr th{background: #e6e6e6; height: 30px; color: #666; text-align: left; padding-left: 1%;}
+.cart form table tr td{height: 60px; padding-left: 1.2%;}
+.cart form table tr td img{width: 50px; height: 50px}
+.cart form table tr td input[type = text] {padding-left: 1%; width: 12%; height: 30px}
+.cart form table tr td input[type = submit] {background: #fff; color: #000; width: 20%; height: 30px; border: 1px solid #400040; }
+.cart form table tr td input[type = submit]:hover{background: #400040; color: #fff; cursor: pointer;}
+
+.cart form table tr td button{border-radius: 3px; width: 180px; height: 35px; background: #fff; border: 1px solid: #400040;}
+.cart form table tr td button{background: #400040; color: #fff; cursor: pointer;}
+.cart form table tr td button a{text-decoration: none; color: #fff}

@@ -9,6 +9,7 @@
 		include ("includes/header.php");
 		include ("includes/nav.php");
 		echo productDetails();
+		include ("includes/footer.php");
 	 ?>	
 	</body>
 </html>
