@@ -6,11 +6,6 @@
 		<div id="links">
 			<ul>
 				<li><a href="loginpage.php">Login</a></li>
-				<?php 
-					if(isset($_SESSION['uid'])){
-						echo $_SESSION['uid'];
-					}
-				 ?>
 				<li><a href="#">Signup</a>
 					<form method="POST" enctype="multipart/form-data">
 						<table>

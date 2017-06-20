@@ -1,4 +1,29 @@
 <?php 
+			
+		function signup(){
+			include ("includes/dbh.php");
+			if(isset($_POST['usignup'])){
+				$uname = $_POST['uname'];
+				$uemail = $_POST['uemail'];
+				$upass = $_POST['upass'];
+				$uaddress = $_POST['uaddress'];
+				$udob = $_POST['udob'];
+				$unumber = $_POST['unumber'];
+
+
+				$reg = $con->prepare("insert into users (name, email, password, address, dob, number, reg_date) values ('$uname', '$uemail','$upass','$uaddress','$udob','$unumber', NOW())");
+					if($reg->execute()){
+						echo "<script> alert('Registered Successfully. Please Enter Your Login Credentials to Proceed.')</script>";
+						echo "<script>window.open('index.php','_self');</script>";
+					}else{
+						echo "<script> alert ('Something went wrong. Cant signup at this moment. Please Try Again Later')</script>";
+					}
+
+			}
+		}
+		
+
+
 
 			function getIp() {
 		    $ip = $_SERVER['REMOTE_ADDR'];
@@ -11,13 +36,6 @@
 		 
 		    return $ip;
 		}
-
-
-
-
-
-
-
 
 	function cart(){
 		include ("includes/dbh.php");
@@ -57,6 +75,8 @@
 		}else{
 		}
 	}
+
+
 
 	function cartDisplay(){
 	include ("includes/dbh.php");
@@ -105,7 +125,7 @@
 				<td>";	
 						$qty = $row['qty'];
 						$price =$prow['price'];
-						$sub_total =  $price;
+						$sub_total =  $row['qty']*$prow['price'];
 						echo $sub_total;
 						$net_total = $net_total + $sub_total;
 				echo "</td>
@@ -116,7 +136,7 @@
 					<td><button id = 'cart1'><a href = 'index.php'>Continue Shopping</a></button></td>
 					<td><button id = 'cart1'>Proceed To Checkout</button></td>
 					<td></td><td></td>
-					<td><b>Total Cost : $net_total</b></td>
+					<td><b>Total Cost Rs : $net_total</b></td>
 					</tr>";
 					
 	}
@@ -175,15 +195,18 @@
 		$fetch_pro = $con->query($pget);
 	while($row_pro = $fetch_pro->fetch_assoc()){
 		echo"<li>
+				<form method = 'post' enctype = 'multipart/form-data'>
 				<a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>
 					<h4>".$row_pro['pro_name']."</h4>
 					<img src = 'resources/products/".$row_pro['img1']."' />
 					<center>
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>View</a></button>
-							<button id = 'pro_btn'><a href = '#'>Cart</a></button>
+							<input type = 'hidden' value = '".$row_pro['pro_id']."' name = 'pro_id' />
+							<button id = 'pro_btn' name = 'cart_btn'>Cart</button>
 							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
+				</form>
 			</li>";		
 	}
 }	
@@ -199,15 +222,18 @@
 		$fetch_pro = $con->query($pget);
 		while($row_pro = $fetch_pro->fetch_assoc()){
 		echo"<li>
+				<form method = 'post' enctype = 'multipart/form-data'>
 				<a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>
 					<h4>".$row_pro['pro_name']."</h4>
 					<img src = 'resources/products/".$row_pro['img1']."' />
 					<center>
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>View</a></button>
-							<button id = 'pro_btn'><a href = '#'>Cart</a></button>
+							<input type = 'hidden' value = '".$row_pro['pro_id']."' name = 'pro_id' />
+							<button id = 'pro_btn' name = 'cart_btn'>Cart</button>
 							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
+				</form>
 			</li>";		
 	}
 }	
@@ -240,16 +266,18 @@
 						</ul> <br clear ='all' />
 							<center>
 							<h4>Price : ".$row_pro['price']."</h4>
-							<form method = 'post'>
+							<form method = 'post'>	
+								<input type = 'hidden' value ='".$row_pro['pro_id']."' name = 'pro_id' /> 
 								<button name = 'buy'>Buy Now</button>
-								<button name = 'cart'>Add To Cart</button>
+								<button name = 'cart_btn'>Add To Cart</button>
 							</form>
 						</center>
 					</div>	<br clear ='all' />
 					<div id = 'similar'>
 						<h3> Products You May Like </h3>
 						<ul>";
-							$similar = "select * from products where cat_id = $cat_id LIMIT 0, 5";
+							echo cart();
+							$similar = "select * from products where pro_id != '$pro_id' and cat_id = $cat_id LIMIT 0, 5";
 							$fetch_prod = $con->query($similar);
 							while($row = $fetch_prod->fetch_assoc()){
 								echo "<li>
@@ -298,15 +326,18 @@
 
 			while($rowp = $fetch->fetch_assoc()){
 				echo"<li>
+				<form method = 'post' enctype = 'multipart/form-data'>
 				<a href = 'pro_detail.php?pro_id=".$rowp['pro_id']."'>
 					<h4>".$rowp['pro_name']."</h4>
 					<img src = 'resources/products/".$rowp['img1']."' />
 					<center>
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$rowp['pro_id']."'>View</a></button>
-							<button id = 'pro_btn'><a href = '#'>Cart</a></button>
+							<input type = 'hidden' value = '".$rowp['pro_id']."' name = 'pro_id' />
+							<button id = 'pro_btn' name = 'cart_btn'>Cart</button>
 							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
+				</form>
 			</li>";		
 			}
 		}

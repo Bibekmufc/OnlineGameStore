@@ -6,6 +6,7 @@
 	<body>
 	<?php 
 		include ("includes/function.php");
+		echo cart();
 		include ("includes/header.php");
 		include ("includes/nav.php");
 		echo "<div id='bodyleft'><ul>"; categoryDetails(); echo"</ul></div>";

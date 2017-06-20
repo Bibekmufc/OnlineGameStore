@@ -4,15 +4,26 @@
 #header{background: #000; height: 100px; width: 100%}
 #header ul li:hover{background: #400040; border-top: 3px solid #000}
 
+
+
 /*logo*/
 #logo{width: 20%; header: 100px; float: left;}
 #logo img {width:50%; height: 100px; margin-left: 20px}
 
 /*links*/
-#links{width: 80%; height: 48px; float: left}
+#links{width: 80%; height: 50px; float: left}
 #links ul{list-style-type: none; margin-right: 20px}
-#links ul li{float: right; margin-left: 30px; line-height: 30px}
-#links ul li a{text-decoration: none; font-size: 17px; color: #fff;}
+#links ul li{float: right; margin-left: 150px; line-height: 30px; padding-left: 1%; padding-right: 1%}
+#links ul li:hover{background: #041228}
+#links ul li a{text-decoration: none; font-size: 14px; color: #fff;}
+#links ul li form{width: 50%; padding: 2%; box-sizing: border-box; display: none; position: absolute; background: #041228; margin-left: -700px;}
+#links ul li:hover form{display: block; }
+#links ul li form table{width: 100%;}
+#links ul li form table tr td{color: #fff; width: 48%; height: 35px;}
+#links ul li form table tr td input{width: 100%; height: 30px;}
+#links ul li form input{border-radius: 3px; color: #000; height: 35px; outline: none; border:1px solid #041228; width: 50%;}
+#links ul li form input:hover{background: #c7d3e5; cursor: pointer;}
+
 
 /*header buttons*/
 #search form input{width: 58%; height: 35px; padding-left: 2%; outline: none; border-width: 0px; border-top-left-radius: 3px; border-bottom-left-radius: 3px;}
@@ -91,3 +102,4 @@
 .cart form table tr td button{border-radius: 3px; width: 180px; height: 35px; background: #fff; border: 1px solid: #400040;}
 .cart form table tr td button{background: #400040; color: #fff; cursor: pointer;}
 .cart form table tr td button a{text-decoration: none; color: #fff}
+

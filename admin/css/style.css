@@ -3,6 +3,8 @@
 body{background: #20144c; padding: 2%; box-sizing: border-box;}
 
 #header{width: 100%; border-radius: 3px; height: 50px; background: #403272}
+#header h2{background: #403272; color: #fff; line-height: 50px; border-radius: 3px; text-align: center; padding-right: 90px;}
+#header button{float: right; border-radius: 3px; background: #e6e6e6; height: 30px; width: 10%; }
 
 #bodyleft{border-radius: 3px; width: 24%; height: 500px; margin: 20px 10px 10px 0px; float: left;}
 #bodyright{padding-bottom: 2%; border-radius: 3px; width: 75%; min-height: 500px; background: #403272; margin: 20px 0px 10px 0px; float: left;}

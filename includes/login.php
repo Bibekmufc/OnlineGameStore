@@ -1,25 +1,20 @@
 <?php 
-include '../dbh.php';
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    include ("dbh.php");
 
-$sql = "SELECT * from users WHERE username = '$username' AND password = '$password'"; /*retrieves data from user table 
-                                                                                                            and mathces if it matches with the data 
-                                                                                                            inserted by the user*/
-$result = $conn->query($sql);
-if ($result->num_rows >= 1) {
-        while ($row = $result->fetch_assoc()) {
-            $username = $row['username'];
-            $password = $row['password'];
-        }
-        header("location: ../home.php");
-    } else { ?>
-        <script>
-            alert("Username or Password incorrect. Please try again!"); //displays message to notify that it doesnt match
-            window.location.href = '../loginpage.php';
-        </script>
-        <?php
-}
-}
-?>
+    $uemail = $_POST['email'];
+    $upass  = $_POST['password'];
+
+    $sql = "select * from users where email = '$uemail' and password = '$upass'";
+    $res = $con -> query($sql);
+
+    if(!$row = $res->fetch_assoc()){
+        $_SESSION['uid'] = $row['uid'];
+        echo "<script>alert('Incorrect login credentials. Please try again.')</script>";
+        echo "<script>window.open('../loginpage.php', '_self');</script>";
+    }else{
+        echo "<script>alert('logged in successfully')</script>";
+        echo "<script>window.open('../index.php', '_self');</script>";
+    }
+
+    
+ ?>
