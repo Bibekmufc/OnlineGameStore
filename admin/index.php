@@ -1,3 +1,15 @@
+<?php 
+	session_start();
+	if(isset($_SESSION['utype']))
+	{
+		if($_SESSION['utype'] == 0)
+		{
+			header('Location: ../index.php');
+		}
+	} else {
+			header('Location: ../loginpage.php');
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>

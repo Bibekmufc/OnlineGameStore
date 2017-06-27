@@ -1,3 +1,6 @@
+<?php 
+session_start();
+ ?>
 <div id="header"> 
 			<div id="logo">	
 				<img src="resources/logo.png">
@@ -5,12 +8,11 @@
 			<!--end of logo-->
 		<div id="links">
 			<ul>
-				<li><a href="loginpage.php">Login</a></li>
 				<?php 
-					if(isset($_SESSION['uid'])){
-						echo $_SESSION['uid'];
-					}
-				 ?>
+
+					if(!isset($_SESSION['utype'])){
+				?>
+				<li><a href="loginpage.php">Login</a></li>
 				<li><a href="#">Signup</a>
 					<form method="POST" enctype="multipart/form-data">
 						<table>
@@ -38,11 +40,25 @@
 								<td>Enter Your Phone Number</td>
 								<td><input type="tel" name="unumber"></td>
 							</tr>
+							<tr>
+								<td>Signup as</td>
+								<td><select name="as">
+									<option value="admin">Admin</option>
+									<option value="user">User</option>
+								</select></td>
+							</tr>
 						</table>
 						<center>
 							<input type="submit" name="usignup" value="Sign Up">
 						</center>
 					</form>
+					<?php 
+						} else { 
+					?>
+					<li><a href="includes/logout.php">Logout</a></li>
+					<?php 
+						}
+					?>
 				</li> 
 			</ul>
 		</div>

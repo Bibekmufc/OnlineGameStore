@@ -4,7 +4,11 @@ body{background: #20144c; padding: 2%; box-sizing: border-box;}
 
 #header{width: 100%; border-radius: 3px; height: 50px; background: #403272}
 #header h2{background: #403272; color: #fff; line-height: 50px; border-radius: 3px; text-align: center; padding-right: 90px;}
-#header button{float: right; border-radius: 3px; background: #e6e6e6; height: 30px; width: 10%; }
+#logout{width: 100%; height: 10px; float: left}
+#logout ul{list-style-type: none; margin-right: 20px}
+#logout ul li{float: right; margin-left: 150px; line-height: 30px; padding-left: 1%; padding-right: 1%}
+#logout ul li:hover{background: #041228}
+#logout ul li a{text-decoration: none; font-size: 14px; color: #e6e6e6;}
 
 #bodyleft{border-radius: 3px; width: 24%; height: 500px; margin: 20px 10px 10px 0px; float: left;}
 #bodyright{padding-bottom: 2%; border-radius: 3px; width: 75%; min-height: 500px; background: #403272; margin: 20px 0px 10px 0px; float: left;}

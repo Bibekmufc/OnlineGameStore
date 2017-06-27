@@ -3,8 +3,6 @@ session_start();
 include ("includes/dbh.php");
 ?>
 
-	
-
 <!DOCTYPE html>
 <html >
 <head>	

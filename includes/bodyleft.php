@@ -1,3 +1,4 @@
+
 <div id="bodyleft">
 	<div id="slider">
 		<h2>New arrivals</h2>

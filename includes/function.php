@@ -1,3 +1,4 @@
+
 <?php 
 			
 		function signup(){
@@ -9,9 +10,10 @@
 				$uaddress = $_POST['uaddress'];
 				$udob = $_POST['udob'];
 				$unumber = $_POST['unumber'];
+				$as = ($_POST['as'] == 'admin') ? 1 : 0;
 
 
-				$reg = $con->prepare("insert into users (name, email, password, address, dob, number, reg_date) values ('$uname', '$uemail','$upass','$uaddress','$udob','$unumber', NOW())");
+				$reg = $con->prepare("insert into users (name, email, password, address, dob, number, is_admin, reg_date) values ('$uname', '$uemail','$upass','$uaddress','$udob','$unumber', $as, NOW())");
 					if($reg->execute()){
 						echo "<script> alert('Registered Successfully. Please Enter Your Login Credentials to Proceed.')</script>";
 						echo "<script>window.open('index.php','_self');</script>";
@@ -176,7 +178,6 @@
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>View</a></button>
 							<input type = 'hidden' value = '".$row_pro['pro_id']."' name = 'pro_id' />
 							<button id = 'pro_btn' name= 'cart_btn'>Cart</button>
-							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
 				</form>
@@ -203,7 +204,6 @@
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>View</a></button>
 							<input type = 'hidden' value = '".$row_pro['pro_id']."' name = 'pro_id' />
 							<button id = 'pro_btn' name = 'cart_btn'>Cart</button>
-							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
 				</form>
@@ -230,7 +230,6 @@
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$row_pro['pro_id']."'>View</a></button>
 							<input type = 'hidden' value = '".$row_pro['pro_id']."' name = 'pro_id' />
 							<button id = 'pro_btn' name = 'cart_btn'>Cart</button>
-							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
 				</form>
@@ -334,7 +333,6 @@
 							<button id = 'pro_btn'><a href = 'pro_detail.php?pro_id=".$rowp['pro_id']."'>View</a></button>
 							<input type = 'hidden' value = '".$rowp['pro_id']."' name = 'pro_id' />
 							<button id = 'pro_btn' name = 'cart_btn'>Cart</button>
-							<button id = 'pro_btn'><a href = '#'>Wishlist</a></button>
 					</center>
 				</a>
 				</form>
