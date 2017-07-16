@@ -110,7 +110,6 @@
 	 				<th>Price</th>
 	 				<th>Remove From Cart</th>
 	 				<th>Sub-total</th>
-
 	 			</tr>";
 	while($row = $fetch->fetch_assoc()):
 		$pro_id = $row['pro_id'];
@@ -136,7 +135,7 @@
 				echo "<tr>
 					<td></td>
 					<td><button id = 'cart1'><a href = 'index.php'>Continue Shopping</a></button></td>
-					<td><button id = 'cart1'>Proceed To Checkout</button></td>
+					<td><button id = 'cart1'><a href = 'checkout.php'>Proceed To Checkout</a></button></td>
 					<td></td><td></td>
 					<td><b>Total Cost Rs : $net_total</b></td>
 					</tr>";
@@ -267,7 +266,7 @@
 							<h4>Price : ".$row_pro['price']."</h4>
 							<form method = 'post'>	
 								<input type = 'hidden' value ='".$row_pro['pro_id']."' name = 'pro_id' /> 
-								<button name = 'buy'>Buy Now</button>
+								<button name = 'buy' id='Buy'><a href ='checkout.php'>Buy Now</a></button>
 								<button name = 'cart_btn'>Add To Cart</button>
 							</form>
 						</center>
@@ -373,4 +372,43 @@
 	
 	}
 	}
+
+	function checkout(){
+		include ("includes/dbh.php");
+
+			echo "<form method = 'post'>
+					<table>
+		 			<tr>
+		 				<td>Your Name : </td>
+		 				<td><input type='text' name='name' /></td>
+		 			</tr>
+		 			<tr>
+		 				<td>Address : </td>
+		 				<td><input type='text' name='address' /></td>
+		 			</tr>
+		 			<tr>	
+		 				<td>Phone Number :  </td>
+		 				<td><input type='text' name='number' /></td>
+		 			</tr>
+		 			</table>
+		 			<center><button name='confirm'>Confirm Your Order</button></center>
+		 			</form>";
+
+				if(isset($_POST['confirm'])){
+				$name = $_POST['name'];
+				$address = $_POST['address'];
+				$number = $_POST['number'];
+
+
+				$reg = $con->prepare("insert into payment (name, address, number) values ('$name', '$address','$number')");
+					if($reg->execute()){
+						echo "<script> alert('Order Placed Successfully. Please wait while our team calls you to confirm your order.')</script>";
+						echo "<script>window.open('index.php','_self');</script>";
+					}else{
+						echo "<script> alert ('Something went wrong. Cant signup at this moment. Please Try Again Later')</script>";
+					}
+
+			}
+		}
+
  ?>

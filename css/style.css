@@ -77,6 +77,12 @@
 #pro_desc h4{margin-top: 40px; margin-bottom: 20px;}
 #pro_desc center form button{border-radius: 3px; width: 180px; height: 35px; background: #fff; border: 1px solid: #400040;}
 #pro_desc center form button:hover{background: #400040; color: #fff;}
+#pro_desc center form a{text-decoration: none; cursor: default; display: block}
+#pro_desc center form a:hover{background: #400040; color: #fff; display: block;}
+
+
+
+
 
 #similar{padding-bottom: 10px; padding-top: 20px; background: #fff; width: 100%; height: 350px;}
 #similar h3{background: #400040; color: #fff; height: 40px; line-height: 40px; padding-left: 2%; }
@@ -106,3 +112,5 @@
 .cart form table tr td button{background: #400040; color: #fff; cursor: pointer;}
 .cart form table tr td button a{text-decoration: none; color: #fff}
 
+/*checkout*/
+#buy{text-decoration-style: none}
