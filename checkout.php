@@ -10,8 +10,6 @@
 		include ("includes/header.php");
 		include ("includes/nav.php");
 		echo checkout();
-		echo cart();
-		echo signup();
 	 ?>	
 	</body>
 </html>

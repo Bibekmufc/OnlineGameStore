@@ -1,4 +1,6 @@
 <?php 
+
+// function to add a new category
 	function addCategory() {
 		include ("includes/dbh.php");
 	if(isset($_POST['add_cat'])){
@@ -14,7 +16,7 @@
 		};
 	}
 
-
+// function to display the category name in update category page
 	function getCategory(){
 		include("includes/dbh.php");
 			$qget = "select * from category";
@@ -23,7 +25,7 @@
 				echo"<option value ='".$row['id']."'>".$row['name']."</option>";
 			}
 	}
-
+// function to list all the existing categories
 	function viewCategory(){
 		include ("includes/dbh.php");
 		$qget = "select * from category ORDER BY name";
@@ -39,7 +41,7 @@
 			endwhile;
 				}
 
-
+// function to list all the products
 	function viewProducts(){
 		include ("includes/dbh.php");
 		$pget = "select * from products";
@@ -69,7 +71,7 @@
 
 
 
-
+// function to add new products
 	function addProduct(){
 		include ("includes/dbh.php");
 		if(isset($_POST['add_prod'])){
@@ -113,6 +115,7 @@
 
 }
 
+// function to edit the existing categories
 	function editCategory(){
 		include ("includes/dbh.php");
 		if(isset($_GET['edit_cat'])){
@@ -142,6 +145,7 @@
 		}
 	}
 
+// function to delete the existing categories
 		function deleteCategory(){
 			
 				include ("includes/dbh.php");
@@ -153,6 +157,7 @@
 				}
 			}		
 
+// function to delete the existing products
 		function deleteProduct(){
 			include ("includes/dbh.php");
 
@@ -165,6 +170,7 @@
 
 		}			
 
+// function to edit the existing products
 		function editProduct(){
 			include ("includes/dbh.php");
 

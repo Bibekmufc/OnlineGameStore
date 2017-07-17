@@ -1,6 +1,6 @@
 
 <?php 
-			
+			//function used to signup
 		function signup(){
 			include ("includes/dbh.php");
 			if(isset($_POST['usignup'])){
@@ -26,7 +26,7 @@
 		
 
 
-
+		// function to get IP address of user
 			function getIp() {
 		    $ip = $_SERVER['REMOTE_ADDR'];
 		 
@@ -39,6 +39,8 @@
 		    return $ip;
 		}
 
+
+		// function to check if there already exists the selected product in the cart
 	function cart(){
 		include ("includes/dbh.php");
 		if(isset($_POST['cart_btn'])){
@@ -66,7 +68,7 @@
 
 
 
-
+	// function to dispay the number of items in cart
 	function cartCount(){	
 	include ("includes/dbh.php");
 		$ip = getIp();
@@ -79,7 +81,7 @@
 	}
 
 
-
+	// function to dispay the products in cart
 	function cartDisplay(){
 	include ("includes/dbh.php");
 	$ip = getIp();
@@ -142,6 +144,8 @@
 					
 	}
 }
+
+	// function to delete the items from cart
 	function deleteCart(){
 
 		include ("includes/dbh.php");
@@ -157,6 +161,7 @@
 	}
 
 
+	// name of a category used as function
 	function giftCards(){
 		include("includes/dbh.php");
 		$cget = "select * from category where id= '11'";
@@ -183,6 +188,9 @@
 			</li>";		
 	}
 }
+
+
+	// name of a category used as function
 	function Games(){
 		include("includes/dbh.php");
 		$cget = "select * from category where id= '2' LIMIT 0, 3";
@@ -209,6 +217,8 @@
 			</li>";		
 	}
 }	
+
+	// name of a category used as function
 		function Consoles(){
 		include("includes/dbh.php");
 		$cget = "select * from category where id= '1' LIMIT 0, 3";
@@ -235,6 +245,8 @@
 			</li>";		
 	}
 }	
+
+// function to dispay the product details
 	function productDetails(){
 		include ("includes/dbh.php");
 
@@ -293,6 +305,7 @@
 		}
 	}
 
+// function to display category
 	function category(){
 		include ("includes/dbh.php");
 
@@ -303,6 +316,7 @@
 		}
 	}	
 
+// function to display category details
 	function categoryDetails(){
 		include ("includes/dbh.php");
 
@@ -340,6 +354,7 @@
 		}
 	}
 
+// function to enable users to search
 	function search(){
 		include ("includes/dbh.php");
 		if(isset($_GET['search'])){
@@ -373,10 +388,11 @@
 	}
 	}
 
+// function for checkout page
 	function checkout(){
 		include ("includes/dbh.php");
 
-			echo "<form method = 'post'>
+			echo "<div class = 'check'><form method = 'post'>
 					<table>
 		 			<tr>
 		 				<td>Your Name : </td>
@@ -392,7 +408,8 @@
 		 			</tr>
 		 			</table>
 		 			<center><button name='confirm'>Confirm Your Order</button></center>
-		 			</form>";
+		 			</form>
+		 			</div>";
 
 				if(isset($_POST['confirm'])){
 				$name = $_POST['name'];

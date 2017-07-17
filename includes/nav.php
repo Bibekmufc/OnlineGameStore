@@ -10,6 +10,7 @@
 					</ul>
 				</li>
 				<li><a href="deals.php">Deals</a></li>
+				<li><a href="resources/UserManual.pdf">User Guide</a></li>
 			</ul>
 		</div> 
 		<!-- end of nav -->
